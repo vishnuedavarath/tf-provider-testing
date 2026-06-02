@@ -1,0 +1,13 @@
+.git
+.terraform
+**/.terraform
+*.tfstate
+*.tfstate.*
+terraform.tfstate.d
+crash.log
+crash.*.log
+*.tfplan
+*.tfplan.*
+*_summary.json
+*.jwt
+*.secret_id

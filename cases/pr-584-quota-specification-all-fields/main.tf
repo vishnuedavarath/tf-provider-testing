@@ -29,7 +29,7 @@ resource "nomad_quota_specification" "all_fields" {
         }
 
         storage {
-          variables_mb    = 25
+          variables_mb    = 30
           host_volumes_mb = 50
         }
       }

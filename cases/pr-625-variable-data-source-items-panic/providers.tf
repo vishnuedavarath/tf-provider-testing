@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.5.0"
+  required_version = ">= 1.11.0"
 
   required_providers {
     nomad = {
@@ -18,6 +18,5 @@ data "terraform_remote_state" "bootstrap" {
 }
 
 provider "nomad" {
-  address   = "http://192.168.2.80:4646"
-  secret_id = data.terraform_remote_state.bootstrap.outputs.token_secret_id
+  # secret_id = data.terraform_remote_state.bootstrap.outputs.token_secret_id
 }

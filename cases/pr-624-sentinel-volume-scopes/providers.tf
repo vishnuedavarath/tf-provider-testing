@@ -3,8 +3,7 @@ terraform {
 
   required_providers {
     nomad = {
-      source  = "hashicorp/nomad"
-      version = "= 2.6.1"
+      source = "hashicorp/nomad"
     }
   }
 }
@@ -18,6 +17,5 @@ data "terraform_remote_state" "bootstrap" {
 }
 
 provider "nomad" {
-  address   = "http://192.168.2.80:4646"
-  secret_id = data.terraform_remote_state.bootstrap.outputs.token_secret_id
+  #   secret_id = data.terraform_remote_state.bootstrap.outputs.token_secret_id
 }

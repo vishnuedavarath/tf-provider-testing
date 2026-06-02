@@ -25,7 +25,7 @@ variable "priority" {
 variable "preserve_counts" {
   description = "Whether nomad_job should preserve the live task group count during registration."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "scale_live_group_count" {

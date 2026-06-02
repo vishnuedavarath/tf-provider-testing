@@ -4,13 +4,15 @@ resource "nomad_namespace" "namespace_with_cluster_config" {
 
   vault_config {
     default = "prod-vault"
-    allowed = ["prod", "staging"]
+    allowed = ["prod", "staging", "qa"]
   }
 
   consul_config {
     default = "prod-consul"
     denied  = ["dev", "test"]
   }
+
+  quota = "pr-584-all-fields-quota"
 }
 
 data "nomad_namespace" "namespace_with_cluster_config" {

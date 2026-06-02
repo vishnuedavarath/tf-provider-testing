@@ -30,6 +30,11 @@ resource "nomad_job" "preserve_counts" {
       type        = "service"
       priority    = ${var.priority}
 
+      meta {
+        test_case = "pr-591-job-preserve-counts"
+        preserve_counts = false
+      }
+
       group "${var.group_name}" {
         count = 1
 

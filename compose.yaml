@@ -1,0 +1,14 @@
+services:
+  terraform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    environment:
+      NOMAD_ADDR: ${NOMAD_ADDR:?set NOMAD_ADDR in your shell or .env}
+      NOMAD_TOKEN: ${NOMAD_TOKEN:?set NOMAD_TOKEN in your shell or .env}
+      BOOTSTRAP_ON_START: ${BOOTSTRAP_ON_START:-1}
+    volumes:
+      - .:/workspace
+    stdin_open: true
+    tty: true
